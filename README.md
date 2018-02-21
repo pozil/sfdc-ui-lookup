@@ -39,14 +39,9 @@ component.find('lookup').search(serverSearchAction);
 
 
 ## Salesforce DX setup instructions
-Create a scratch org:<br/>
-`sfdx force:org:create -s -f config/project-scratch-def.json -a lookup`
+Deploy the sample application with Salesforce DX by clicking on this button:
 
-Push the sources to it:<br/>
-`sfdx force:source:push`
-
-Log in and open the sample app:<br/>
-`sfdx force:org:open -p c/SampleLookupApp.app`
+[![Deploy](https://deploy-to-sfdx.com/dist/assets/images/DeployToSFDX.svg)](https://deploy-to-sfdx.com)
 
 
 ## Sample application
