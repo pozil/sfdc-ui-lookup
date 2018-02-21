@@ -3,4 +3,4 @@ assign-permset: false
 run-apex-tests: false
 delete-scratch-org: false
 show-scratch-org-url: true
-open-path: c/SampleLookupApp.ap
+open-path: c/SampleLookupApp.app
