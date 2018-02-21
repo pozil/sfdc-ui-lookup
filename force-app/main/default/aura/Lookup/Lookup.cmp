@@ -9,7 +9,7 @@
     <aura:attribute access="private" type="Boolean" name="hasFocus" default="false"/>
     <aura:attribute access="private" type="Map" name="blurTimeout"/>
 
-    <aura:registerEvent name="onSearch" type="c:LookupSearchEvent"/>
+    <aura:registerEvent name="onSearch" type="c:LookupSearchEvent" description="Component event fired when a search needs to be performed on the server-side. The search method should be called by the handler of this event."/>
 
     <aura:method name="search" action="{!c.search}" description="Performs search by calling the provide server-side action and displays results.">
         <aura:attribute name="serverAction" type="Aura.Action" required="true" description="Server-side action for the search. Action must return an Apex List&lt;LookupSearchResult&gt;."/>

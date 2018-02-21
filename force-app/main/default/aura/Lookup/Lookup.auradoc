@@ -1,8 +1,10 @@
 <aura:documentation>
-	<aura:description>Lookup Lightning component
+	<aura:description>
+		<p>This is a generic &amp; customizable lookup component built using Salesforce Lightning and SLDS style.
+		It does not rely on third party libraries and you have full control over its datasource.</p>
 		<hr/>
-		<h4>Method - search</h4>
-		<p>Performs search by calling the provide server-side action and displays results.</p>
+		<h4><code>search</code> method</h4>
+		<p>Performs search by calling the provided server-side action and displays results.</p>
 		<table>
 			<tr>
 				<th>Name</th>
