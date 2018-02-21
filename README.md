@@ -23,16 +23,19 @@ You can access it from this URL (replace the domain):
 https://<b>&lt;YOUR_DOMAIN&gt;</b>.lightning.force.com/auradocs/reference.app#reference?descriptor=c:Lookup&defType=component
 
 
-## Sample application
-Check out the [sample application](https://github.com/pozil/sfdc-ui-modal-sample).
-
-
 ## Salesforce DX setup instructions
-Create scratch org:<br/>
+Create a scratch org:<br/>
 `sfdx force:org:create -s -f config/project-scratch-def.json -a lookup`
 
-Push app source:<br/>
+Push the sources to it:<br/>
 `sfdx force:source:push`
 
 Log in and open the sample app:<br/>
 `sfdx force:org:open -p c/SampleLookupApp.app`
+
+
+## Sample application
+The default installation installs the Lookup component and a sample application available under this URL (replace the domain):
+https://<b>&lt;YOUR_DOMAIN&gt;</b>.lightning.force.com/c/SampleLookupApp.app
+
+If you wish to install the project without the sample application, edit `sfdx-project.json` and remove the `src-sample` path.
