@@ -15,17 +15,19 @@ The Lightning Lookup component provides the following features:
 - built-in server request rate limit mechanism
 
 <img src="screenshots/multiple-selection.png" width="350" align="right"/>
+
+
 ## Documentation
-Component is documented using the Aura documentation.
+Component is documented using Aura documentation.
 You can access it from this URL (replace the domain):
-https://<b>&lt;YOUR_DOMAIN&gt;</b>.lightning.force.com/auradocs/reference.app#reference?descriptor=ui_modal:modal&defType=component
+https://<b>&lt;YOUR_DOMAIN&gt;</b>.lightning.force.com/auradocs/reference.app#reference?descriptor=c:Lookup&defType=component
+
 
 ## Sample application
 Check out the [sample application](https://github.com/pozil/sfdc-ui-modal-sample).
 
 
 ## Salesforce DX setup instructions
-
 Create scratch org:<br/>
 `sfdx force:org:create -s -f config/project-scratch-def.json -a lookup`
 
