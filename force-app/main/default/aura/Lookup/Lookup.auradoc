@@ -1,0 +1,19 @@
+<aura:documentation>
+	<aura:description>Lookup Lightning component
+		<hr/>
+		<h4>Method - search</h4>
+		<p>Performs search by calling the provide server-side action and displays results.</p>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td>serverAction</td>
+				<td>Aura.Action</td>
+				<td>Server-side action for the search. Action must return an Apex <code>List&lt;LookupSearchResult&gt;</code>.</td>
+			</tr>
+		</table>
+	</aura:description>
+</aura:documentation>

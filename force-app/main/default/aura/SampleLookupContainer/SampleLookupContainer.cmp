@@ -1,0 +1,7 @@
+<aura:component access="global" controller="SampleLookupController">
+    <aura:attribute access="private" type="List" name="selection" default="[]"/>
+
+    <div class="slds-form slds-form_stacked slds-m-around_xx-large">
+        <c:Lookup aura:id="lookup" selection="{!v.selection}" onSearch="{!c.lookupSearch}" label="Search" placeholder="Search Salesforce" isMultiEntry="true"/>
+    </div>
+</aura:component>
