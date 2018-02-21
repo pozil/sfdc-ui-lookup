@@ -1,5 +1,7 @@
 # Salesforce Lightning Lookup Component
 
+<img src="screenshots/lookup-animation.gif" align="center"/>
+
 <img src="screenshots/dropdown-open.png" width="350" align="right"/>
 
 ## About
