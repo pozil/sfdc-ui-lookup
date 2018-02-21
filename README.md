@@ -3,7 +3,7 @@
 <img src="screenshots/dropdown-open.png" width="350" align="right"/>
 
 ## About
-This is a generic &amp; customizable lookup component built using Salesforce Lightning and [SLDS](https://www.lightningdesignsystem.com/) style.
+This is a generic &amp; customizable lookup component built using Salesforce Lightning and [SLDS](https://www.lightningdesignsystem.com/) style.<br/>
 It does not rely on third party libraries and you have full control over its datasource.
 
 <b>Features</b>
@@ -18,8 +18,8 @@ The Lightning Lookup component provides the following features:
 
 
 ## Documentation
-Component is documented using Aura documentation.
-You can access it from this URL (replace the domain):
+Component is documented using Aura documentation.<br/>
+You can access it from this URL (replace the domain):<br/>
 https://<b>&lt;YOUR_DOMAIN&gt;</b>.lightning.force.com/auradocs/reference.app#reference?descriptor=c:Lookup&defType=component
 
 
@@ -35,7 +35,7 @@ Log in and open the sample app:<br/>
 
 
 ## Sample application
-The default installation installs the Lookup component and a sample application available under this URL (replace the domain):
+The default installation installs the Lookup component and a sample application available under this URL (replace the domain):<br/>
 https://<b>&lt;YOUR_DOMAIN&gt;</b>.lightning.force.com/c/SampleLookupApp.app
 
 If you wish to install the project without the sample application, edit `sfdx-project.json` and remove the `src-sample` path.
