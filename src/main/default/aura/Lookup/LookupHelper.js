@@ -18,9 +18,24 @@
             return;
         }
         
-        // Send search event
-        const searchEvent = component.getEvent('onSearch');
-        searchEvent.fire();
+        // Apply search throttling (prevents search if user is still typing)
+        let searchTimeout = component.get('v.searchThrottlingTimeout');
+        if (searchTimeout) {
+            clearTimeout(searchTimeout);
+        }
+        searchTimeout = window.setTimeout(
+            $A.getCallback(() => {
+                // Send search event if it long enougth
+                const searchTerm = component.get('v.searchTerm');
+                if (searchTerm.length >= 2) {
+                    const searchEvent = component.getEvent('onSearch');
+                    searchEvent.fire();
+                }
+                component.set('v.searchThrottlingTimeout', null);
+            }),
+            300
+        );
+        component.set('v.searchThrottlingTimeout', searchTimeout);
     },
 
     selectResult : function(component, recordId) {

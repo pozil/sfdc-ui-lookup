@@ -91,7 +91,8 @@
             $A.getCallback(() => {
                 component.set('v.hasFocus', false);
                 component.set('v.blurTimeout', null);
-            }), 300
+            }),
+            300
         );
         component.set('v.blurTimeout', blurTimeout);
     },

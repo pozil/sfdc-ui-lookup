@@ -8,6 +8,7 @@
     <aura:attribute access="private" type="List" name="searchResults" default="[]"/>
     <aura:attribute access="private" type="Boolean" name="hasFocus" default="false"/>
     <aura:attribute access="private" type="Map" name="blurTimeout"/>
+    <aura:attribute access="private" type="Map" name="searchThrottlingTimeout"/>
 
     <aura:registerEvent name="onSearch" type="c:LookupSearchEvent" description="Component event fired when a search needs to be performed on the server-side. The search method should be called by the handler of this event."/>
 
