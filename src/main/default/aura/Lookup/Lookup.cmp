@@ -16,7 +16,7 @@
     </aura:method>
 
     <div class="slds-form-element">
-        <label class="slds-form-element__label" for="{! globalId + '_combobox' }">{!v.label}</label>
+        <label class="slds-form-element__label" for="{# globalId + '_combobox' }">{!v.label}</label>
         <div class="slds-form-element__control">
             <div class="{! 'slds-combobox_container slds-has-inline-listbox '+ (v.hasFocus ? 'slds-has-input-focus' : '') }">
                 <div class="{! 'slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click '+ (and(v.hasFocus, !empty(v.searchResults)) ? 'slds-is-open' : 'slds-combobox-lookup') }"
@@ -26,8 +26,8 @@
 
                         <!-- Multi-entry combobox start -->
                         <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
-                            <input type="text" class="slds-input slds-combobox__input" aria-autocomplete="list" aria-controls="{! globalId + '_listbox' }" autocomplete="off" role="textbox"
-                                id="{! globalId + '_combobox' }"
+                            <input type="text" class="slds-input slds-combobox__input" aria-autocomplete="list" aria-controls="{# globalId + '_listbox' }" autocomplete="off" role="textbox"
+                                id="{# globalId + '_combobox' }"
                                 aura:id="searchInput"
                                 placeholder="{!v.placeholder}"
                                 value=""
@@ -44,8 +44,8 @@
                             <div class="{! 'slds-combobox__form-element slds-input-has-icon '+ (empty(v.selection) ? 'slds-input-has-icon_right' : 'slds-input-has-icon_left-right') }" role="none">
                                 <lightning:icon iconName="{! empty(v.selection[0].icon) ? 'standard:default' : v.selection[0].icon}" size="small" alternativeText="Selected item icon"
                                     class="{! 'slds-combobox__input-entity-icon '+ (empty(v.selection) ? 'slds-hide' : '') }"/>
-                                <input type="text" class="slds-input slds-combobox__input" aria-autocomplete="list" aria-controls="{! globalId + '_listbox' }" autocomplete="off" role="textbox"
-                                    id="{! globalId + '_combobox' }"
+                                <input type="text" class="slds-input slds-combobox__input" aria-autocomplete="list" aria-controls="{# globalId + '_listbox' }" autocomplete="off" role="textbox"
+                                    id="{# globalId + '_combobox' }"
                                     aura:id="searchInput"
                                     placeholder="{!v.placeholder}"
                                     value="{! empty(v.selection) ? '' : v.selection[0].title }"
@@ -64,7 +64,7 @@
                     </aura:if>
 
                     <!-- List box start -->
-                    <div id="{! globalId + '_listbox' }" role="listbox" onclick="{!c.onComboboxClick}">
+                    <div id="{# globalId + '_listbox' }" role="listbox" onclick="{!c.onComboboxClick}">
                         <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid" role="presentation">
 
                             <aura:iteration items="{!v.searchResults}" var="result">
@@ -91,7 +91,7 @@
 
             <!-- Multi-selection start -->
             <aura:if isTrue="{!v.isMultiEntry}">
-                <div id="{! globalId + '_selection' }" role="listbox" aria-orientation="horizontal">
+                <div id="{# globalId + '_selection' }" role="listbox" aria-orientation="horizontal">
                     <ul class="slds-listbox slds-listbox_inline slds-p-top_xxx-small" role="group" aria-label="Selected Options:">
                         <aura:iteration items="{!v.selection}" var="item">
                             <li role="presentation" class="slds-listbox__item">
