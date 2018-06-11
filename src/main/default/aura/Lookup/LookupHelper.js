@@ -1,7 +1,7 @@
 ({
     updateSearchTerm : function(component, searchTerm) {
         // Cleanup new search term
-        const updatedSearchTerm = searchTerm.trim().replace(/\*/g);
+        const updatedSearchTerm = searchTerm.trim().replace(/\*/g).toLowerCase();
         
         // Compare clean new search term with current one and abort if identical
         const curSearchTerm = component.get('v.searchTerm');
