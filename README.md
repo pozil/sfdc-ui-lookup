@@ -15,7 +15,7 @@ It does not rely on third party libraries and you have full control over its dat
 The Lightning Lookup component provides the following features:
 - customizable data source that can return mixed sObject types
 - single or multiple selection mode
-- client-side caching
+- client-side caching & request throttling
 - built-in server request rate limit mechanism
 
 <img src="screenshots/multiple-selection.png" width="350" align="right"/>
