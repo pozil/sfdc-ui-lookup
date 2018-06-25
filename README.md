@@ -1,10 +1,10 @@
 # Salesforce Lightning Lookup Component
 
 <p align="center">
-    <img src="screenshots/lookup-animation.gif"/>
+    <img src="screenshots/lookup-animation.gif" alt="Lookup animation"/>
 </p>
 
-<img src="screenshots/dropdown-open.png" width="350" align="right"/>
+<img src="screenshots/dropdown-open.png" alt="Lookup with dropdown open" width="350" align="right"/>
 
 ## About
 This is a generic &amp; customizable lookup component built using Salesforce Lightning and [SLDS](https://www.lightningdesignsystem.com/) style.<br/>
@@ -18,8 +18,9 @@ The Lightning Lookup component provides the following features:
 - client-side caching & request throttling
 - built-in server request rate limit mechanism
 
-<img src="screenshots/multiple-selection.png" width="350" align="right"/>
-
+<p align="center">
+    <img src="screenshots/selection-types.png" alt="Multiple or single entry lookup"/>
+</p>
 
 ## Documentation
 The Lookup Lightning component is documented using Aura documentation.<br/>
