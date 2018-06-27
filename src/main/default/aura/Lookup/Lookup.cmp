@@ -45,7 +45,7 @@
                             <div class="{! 'slds-combobox__form-element slds-input-has-icon '+ (empty(v.selection) ? 'slds-input-has-icon_right' : 'slds-input-has-icon_left-right') }" role="none">
                                 <lightning:icon iconName="{! empty(v.selection[0].icon) ? 'standard:default' : v.selection[0].icon}" size="small" alternativeText="Selected item icon"
                                     class="{! 'slds-combobox__input-entity-icon '+ (empty(v.selection) ? 'slds-hide' : '') }"/>
-                                <input type="text" class="slds-input slds-combobox__input" aria-autocomplete="list" aria-controls="{# globalId + '_listbox' }" autocomplete="off" role="textbox"
+                                <input type="text" class="slds-input slds-combobox__input slds-combobox__input-value" aria-autocomplete="list" aria-controls="{# globalId + '_listbox' }" autocomplete="off" role="textbox"
                                     id="{# globalId + '_combobox' }"
                                     aura:id="searchInput"
                                     placeholder="{!v.placeholder}"
