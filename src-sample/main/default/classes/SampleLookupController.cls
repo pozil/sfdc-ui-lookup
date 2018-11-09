@@ -1,18 +1,18 @@
 public with sharing class SampleLookupController {
-    
+
     private final static Integer MAX_RESULTS = 5;
 
     @AuraEnabled
     public static List<LookupSearchResult> search(String searchTerm, List<String> selectedIds) {
         // Prepare query paramters
         searchTerm += '*';
-        
+
         // Execute search query
         List<List<SObject>> searchResults = [FIND :searchTerm IN ALL FIELDS RETURNING
             Account (Id, Name, BillingCity WHERE id NOT IN :selectedIds),
             Opportunity (Id, Name, StageName WHERE id NOT IN :selectedIds)
             LIMIT :MAX_RESULTS];
-        
+
         // Prepare results
         List<LookupSearchResult> results = new List<LookupSearchResult>();
 

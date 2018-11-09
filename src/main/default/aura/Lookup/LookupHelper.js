@@ -2,7 +2,7 @@
     updateSearchTerm : function(component, searchTerm) {
         // Cleanup new search term
         const updatedSearchTerm = searchTerm.trim().replace(/\*/g).toLowerCase();
-        
+
         // Compare clean new search term with current one and abort if identical
         const curSearchTerm = component.get('v.searchTerm');
         if (curSearchTerm === updatedSearchTerm) {
@@ -11,13 +11,13 @@
 
         // Update search term
         component.set('v.searchTerm', updatedSearchTerm);
-        
+
         // Ignore search terms that are too small
         if (updatedSearchTerm.length < 2) {
             component.set('v.searchResults', []);
             return;
         }
-        
+
         // Apply search throttling (prevents search if user is still typing)
         let searchTimeout = component.get('v.searchThrottlingTimeout');
         if (searchTimeout) {
@@ -71,5 +71,13 @@
 
     isSelectionAllowed : function(component) {
         return component.get('v.isMultiEntry') || component.get('v.selection').length === 0;
+    },
+
+    toggleSearchSpinner : function(component) {
+        const spinner = component.find('spinner');
+        const searchIcon = component.find('search-icon');
+
+        $A.util.toggleClass(spinner, 'slds-hide');
+        $A.util.toggleClass(searchIcon, 'slds-hide');
     }
 })
