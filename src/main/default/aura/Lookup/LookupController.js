@@ -1,7 +1,8 @@
 ({
     search : function(component, event, helper) {
         const action = event.getParam('arguments').serverAction;
-        
+        helper.toggleSearchSpinner(component);
+
         action.setParams({
             searchTerm : component.get('v.searchTerm'),
             selectedIds : helper.getSelectedIds(component)
@@ -10,11 +11,13 @@
         action.setCallback(this, (response) => {
             const state = response.getState();
             if (state === 'SUCCESS') {
+                helper.toggleSearchSpinner(component);
                 // Process server success response
                 const returnValue = response.getReturnValue();
                 component.set('v.searchResults', returnValue);
             }
             else if (state === 'ERROR') {
+                helper.toggleSearchSpinner(component);
                 // Retrieve the error message sent by the server
                 const errors = response.getError();
                 let message = 'Unknown error'; // Default error message
@@ -62,6 +65,14 @@
     onResultClick : function(component, event, helper) {
         const recordId = event.currentTarget.id;
         helper.selectResult(component, recordId);
+
+        // additional user defined event on result click
+        // for optional error handling / clearing in consumer
+        var event = component.getEvent('onSelection');
+
+        if (event) {
+            event.fire();
+        }
     },
 
     onComboboxClick : function(component, event, helper) {
@@ -85,7 +96,7 @@
         // Prevent action if selection is not allowed
         if (!helper.isSelectionAllowed(component)) {
             return;
-        }        
+        }
         // Delay hiding combobox so that we can capture selected result
         const blurTimeout = window.setTimeout(
             $A.getCallback(() => {
