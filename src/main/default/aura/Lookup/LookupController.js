@@ -8,7 +8,7 @@
             selectedIds : helper.getSelectedIds(component)
         });
 
-        action.setCallback(this, (response) => {
+        action.setCallback(this, function(response) {
             const state = response.getState();
             if (state === 'SUCCESS') {
                 helper.toggleSearchSpinner(component);
@@ -99,7 +99,7 @@
         }
         // Delay hiding combobox so that we can capture selected result
         const blurTimeout = window.setTimeout(
-            $A.getCallback(() => {
+            $A.getCallback(function() {
                 component.set('v.hasFocus', false);
                 component.set('v.blurTimeout', null);
             }),

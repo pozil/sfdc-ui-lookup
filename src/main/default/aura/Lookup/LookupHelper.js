@@ -24,7 +24,7 @@
             clearTimeout(searchTimeout);
         }
         searchTimeout = window.setTimeout(
-            $A.getCallback(() => {
+            $A.getCallback(function() {
                 // Send search event if it long enougth
                 const searchTerm = component.get('v.searchTerm');
                 if (searchTerm.length >= 2) {
@@ -41,7 +41,7 @@
     selectResult : function(component, recordId) {
         // Save selection
         const searchResults = component.get('v.searchResults');
-        const selectedResult = searchResults.filter(result => result.id === recordId);
+        const selectedResult = searchResults.filter(function(result) { return result.id === recordId; });
         if (selectedResult.length > 0) {
             const selection = component.get('v.selection');
             selection.push(selectedResult[0]);
@@ -56,12 +56,12 @@
 
     getSelectedIds : function(component) {
         const selection = component.get('v.selection');
-        return selection.map(element => element.id);
+        return selection.map(function(element) { return element.id; });
     },
 
     removeSelectedItem : function(component, removedItemId) {
         const selection = component.get('v.selection');
-        const updatedSelection = selection.filter(item => item.id !== removedItemId);
+        const updatedSelection = selection.filter(function(item) { return item.id !== removedItemId; });
         component.set('v.selection', updatedSelection);
     },
 
