@@ -10,7 +10,7 @@ echo "Installing org with alias: $ORG_ALIAS"
 echo ""
 
 echo "Cleaning previous scratch org..."
-sfdx force:org:delete -p -u $ORG_ALIAS
+sfdx force:org:delete -p -u $ORG_ALIAS &> /dev/null
 echo ""
 
 echo "Creating scratch org..." && \
