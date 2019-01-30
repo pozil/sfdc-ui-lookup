@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ORG_ALIAS="lookup"
+ORG_ALIAS="lookup-aura"
 if [ "$#" -eq 1 ]; then
   ORG_ALIAS="$1"
 fi

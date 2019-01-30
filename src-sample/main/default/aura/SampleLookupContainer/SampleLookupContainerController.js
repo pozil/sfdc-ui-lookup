@@ -6,7 +6,7 @@
         component.find('lookup').search(serverSearchAction);
     },
 
-    onSubmit: function(component, e, helper) {
+    onSubmit: function(component, event, helper) {
         const selection = component.get('v.selection');
 
         if (!selection.length) {
@@ -19,12 +19,16 @@
         }
     },
 
-    clearErrorsOnChange: function(component, e, helper) {
+    clearErrorsOnChange: function(component, event, helper) {
         const selection = component.get('v.selection');
         const errors = component.get('v.errors');
 
         if (selection.length && errors.length) {
             component.set('v.errors', []);
         }
+    },
+
+    clearSelection: function(component, event, helper) {
+        component.set('v.selection', []);
     }
 })

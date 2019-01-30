@@ -11,6 +11,8 @@
         </div>
     </div>
 
-    <c:SampleLookupContainer/>
+    <div class="slds-m-around_xx-large">
+        <c:SampleLookupContainer/>
+    </div>
 
 </aura:application>
