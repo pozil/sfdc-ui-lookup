@@ -1,19 +1,22 @@
 ({
     updateSearchTerm : function(component, searchTerm) {
-        // Cleanup new search term
-        const updatedSearchTerm = searchTerm.trim().replace(/\*/g, '').toLowerCase();
+        // Save search term so that it updates input
+        component.set('v.searchTerm', searchTerm);
+        
+        // Get previous clean search term
+        const cleanSearchTerm = component.set('v.cleanSearchTerm');
 
         // Compare clean new search term with current one and abort if identical
-        const curSearchTerm = component.get('v.searchTerm');
-        if (curSearchTerm === updatedSearchTerm) {
+        const newCleanSearchTerm = searchTerm.trim().replace(/\*/g, '').toLowerCase();
+        if (cleanSearchTerm === newCleanSearchTerm) {
             return;
         }
 
-        // Update search term
-        component.set('v.searchTerm', updatedSearchTerm);
+        // Update clean search term for later comparison
+        component.set('v.cleanSearchTerm', newCleanSearchTerm);
 
         // Ignore search terms that are too small
-        if (updatedSearchTerm.length < 2) {
+        if (newCleanSearchTerm.length < 2) {
             component.set('v.searchResults', []);
             return;
         }
@@ -48,8 +51,6 @@
             component.set('v.selection', selection);
         }
         // Reset search
-        const searchInput = component.find('searchInput');
-        searchInput.getElement().value = '';
         component.set('v.searchTerm', '');
         component.set('v.searchResults', []);
     },

@@ -7,6 +7,7 @@
     <aura:attribute access="global" type="Integer" name="scrollAfterNItems" default="5" description="A null or integer value used to force overflow scroll on the result listbox after N number of items. Valid values are null, 5, 7, or 10. Use null to disable overflow scrolling." />
 
     <aura:attribute access="private" type="String" name="searchTerm" default="" />
+    <aura:attribute access="private" type="String" name="cleanSearchTerm" default="" />
     <aura:attribute access="private" type="List" name="searchResults" default="[]" />
     <aura:attribute access="private" type="Boolean" name="hasFocus" default="false" />
     <aura:attribute access="private" type="Map" name="blurTimeout" />
@@ -33,7 +34,7 @@
                             <input type="text" class="{! 'slds-input slds-combobox__input has-custom-height ' + (!empty(v.errors) ? 'has-custom-error' : '') }"
                                 aria-autocomplete="list" aria-controls="{# globalId + '_listbox' }" autocomplete="off"
                                 role="textbox" id="{# globalId + '_combobox' }" aura:id="searchInput" placeholder="{!v.placeholder}"
-                                value="" onfocus="{!c.onFocus}" onblur="{!c.onBlur}" oninput="{!c.onInput}" />
+                                value="{!v.searchTerm}" onfocus="{!c.onFocus}" onblur="{!c.onBlur}" oninput="{!c.onInput}" />
 
                             <!-- search icon and spinner -->
                             <div aura:id="spinner" role="presentation" class="slds-hide slds-input__icon slds-input__icon_right slds-is-relative">

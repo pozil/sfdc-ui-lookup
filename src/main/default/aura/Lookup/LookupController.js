@@ -4,7 +4,7 @@
         helper.toggleSearchSpinner(component);
 
         action.setParams({
-            searchTerm : component.get('v.searchTerm'),
+            searchTerm : component.get('v.cleanSearchTerm'),
             selectedIds : helper.getSelectedIds(component)
         });
 
