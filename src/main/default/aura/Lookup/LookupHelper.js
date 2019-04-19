@@ -70,7 +70,6 @@
         component.set('v.selection', []);
         // Fire event so that it fires the validation
         var event = component.getEvent('onSelection');
-
         if (event) {
             event.fire();
         }
