@@ -2,7 +2,7 @@ public with sharing class SampleLookupController {
 
     private final static Integer MAX_RESULTS = 5;
 
-    @AuraEnabled
+    @AuraEnabled(cacheable=true)
     public static List<LookupSearchResult> search(String searchTerm, List<String> selectedIds) {
         // Prepare query paramters
         searchTerm += '*';
