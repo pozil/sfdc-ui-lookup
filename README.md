@@ -47,7 +47,7 @@ public static List<LookupSearchResult> search(String searchTerm, List<String> se
 The lookup component exposes an `onSearch` component event that is fired when a search needs to be performed on the server-side.
 The parent component that contains the lookup must handle the `onSearch` event:
 ```xml
-<c:Lookup aura:id="lookup" selection="{!v.selection}" onSearch="{!c.lookupSearch}" label="Search"/>
+<c:Lookup selection="{!v.selection}" onSearch="{!c.lookupSearch}" label="Search"/>
 ```
 
 The event handler should do the following:
