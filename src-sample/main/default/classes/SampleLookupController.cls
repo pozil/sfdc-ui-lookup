@@ -3,7 +3,10 @@ public with sharing class SampleLookupController {
     private final static Integer MAX_RESULTS = 5;
 
     @AuraEnabled(cacheable=true)
-    public static List<LookupSearchResult> search(String searchTerm, List<String> selectedIds) {
+    public static List<LookupSearchResult> search(String searchTerm, List<String> selectedIds, String anOptionalParam) {
+        // We're not using anOptionalParam parameter
+        // it's just here to demonstrate custom params
+        
         // Prepare query paramters
         searchTerm += '*';
 

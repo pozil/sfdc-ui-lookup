@@ -3,10 +3,9 @@
         const action = event.getParam('arguments').serverAction;
         helper.toggleSearchSpinner(component);
 
-        action.setParams({
-            searchTerm : component.get('v.cleanSearchTerm'),
-            selectedIds : helper.getSelectedIds(component)
-        });
+        // Using setParam instead of setParams in order not to override params passed by parent
+        action.setParam('searchTerm', component.get('v.cleanSearchTerm'));
+        action.setParam('selectedIds', helper.getSelectedIds(component));
 
         action.setCallback(this, function(response) {
             const state = response.getState();

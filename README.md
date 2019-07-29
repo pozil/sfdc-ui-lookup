@@ -30,7 +30,9 @@ https://<b>&lt;YOUR_DOMAIN&gt;</b>.lightning.force.com/docs/component-library/bu
 
 Follow these steps in order to use the lookup component:
 
-### 1) Write the search endpoint
+### Basic use
+
+#### 1) Write the search endpoint
 
 Implement an Apex `@AuraEnabled` method (`SampleLookupController.search` in our samples) that returns the search results as a `List<LookupSearchResult>`.
 The method name can be different but it needs to match this signature:
@@ -40,7 +42,7 @@ The method name can be different but it needs to match this signature:
 public static List<LookupSearchResult> search(String searchTerm, List<String> selectedIds) {}
 ```
 
-### 2) Handle the `search` event and pass the results to the lookup
+#### 2) Handle the `search` event and pass the results to the lookup
 
 The lookup component exposes an `onSearch` component event that is fired when a search needs to be performed on the server-side.
 The parent component that contains the lookup must handle the `onSearch` event:
@@ -58,6 +60,29 @@ lookupSearch : function(component, event, helper) {
 }
 ```
 
+### Advanced use: custom search parameters
+If you need to pass custom parameters like a record id to the Apex search method, you can write the following search event handler:
+
+```js
+lookupSearch : function(component, event, helper) {
+    // Get the SampleLookupController.search server side action
+    const serverSearchAction = component.get('c.search');
+    // You can pass optional parameters to the search action
+    // but you can only use setParam and not setParams to do so
+    serverSearchAction.setParam('recordId', component.get('v.recordId'));
+    // Passes the action to the Lookup component by calling the search method
+    component.find('lookup').search(serverSearchAction);
+},
+```
+
+And use a custom Apex search method with your extra parameters:
+
+```apex
+@AuraEnabled(cacheable=true)
+public static List<LookupSearchResult> search(String searchTerm, List<String> selectedIds, String recordId) {
+
+}
+```
 
 ## Salesforce DX setup instructions
 Deploy the sample application with Salesforce DX by clicking on this button:
