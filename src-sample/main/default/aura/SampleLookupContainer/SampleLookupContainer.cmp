@@ -7,7 +7,7 @@
         <div class="slds-form slds-form_stacked slds-m-around_xx-large">
             <lightning:input type="checkbox" label="Is mutli entry lookup" checked="{!v.isMultiEntry}" onchange="{!c.clearSelection}"/>
             
-            <c:Lookup aura:id="lookup" selection="{!v.selection}" onSearch="{!c.lookupSearch}" onSelection="{!c.clearErrorsOnChange}" errors="{!v.errors}" label="Search" placeholder="Search Salesforce" isMultiEntry="{!v.isMultiEntry}"/>
+            <c:Lookup selection="{!v.selection}" onSearch="{!c.lookupSearch}" onSelection="{!c.clearErrorsOnChange}" errors="{!v.errors}" label="Search" placeholder="Search Salesforce" isMultiEntry="{!v.isMultiEntry}"/>
     
             <lightning:button variant="brand" label="Submit" onclick="{!c.onSubmit}" />
         </div>
