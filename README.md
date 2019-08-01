@@ -62,7 +62,7 @@ lookupSearch : function(component, event, helper) {
 }
 ```
 
-### Advanced use: custom search parameters
+### Advanced use case: custom search parameters
 If you need to pass custom parameters like a record id to the Apex search method, you can write the following search event handler:
 
 ```js
@@ -87,6 +87,32 @@ public static List<LookupSearchResult> search(String searchTerm, List<String> se
 
 }
 ```
+
+### Advanced use case: lookups in an iteration
+If you use lookups in an iteration and need to adjust the search logic based on some iteration parameter, follow these steps.
+
+Wrap the Lookup in a `div` with a dynamic dataset attribute like so:
+```xml
+<aura:iteration items="{!v.rows}" var="row" indexVar="index">
+  <div data-row-index="{!index}">
+    <c:Lookup .../>
+  </div>
+<aura:iteration>
+```
+
+Then, in your search function, do that:
+```js
+lookupSearch : function(component, event, helper) {
+  // Get the lookup component that fired the search event
+  const lookupComponent = event.getSource();
+  // Get the row index from the parent div
+  const rowIndex = lookupComponent.getElement().parentNode.dataset.rowIndex;
+
+  // Handle the rest of the search logic
+  // You can use different search endpoints depending on the row index for example
+}
+```
+
 
 ## Salesforce DX setup instructions
 Deploy the sample application with Salesforce DX by clicking on this button:
