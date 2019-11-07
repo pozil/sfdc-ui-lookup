@@ -4,7 +4,7 @@
         component.set('v.searchTerm', searchTerm);
         
         // Get previous clean search term
-        const cleanSearchTerm = component.set('v.cleanSearchTerm');
+        const cleanSearchTerm = component.get('v.cleanSearchTerm');
 
         // Compare clean new search term with current one and abort if identical
         const newCleanSearchTerm = searchTerm.trim().replace(/\*/g, '').toLowerCase();
