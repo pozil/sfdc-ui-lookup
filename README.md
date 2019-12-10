@@ -1,5 +1,5 @@
-# Salesforce Lookup Component (Aura version)
-Lightning Web Component version is available [here](https://github.com/pozil/sfdc-ui-lookup-lwc).
+# Salesforce Lookup Component (Aura version, maintenance only)
+⚠️This Aura version is only maintained for bugs. New features are added to the [Lightning Web Component version](https://github.com/pozil/sfdc-ui-lookup-lwc).
 
 <p align="center">
     <img src="screenshots/lookup-animation.gif" alt="Lookup animation"/>
