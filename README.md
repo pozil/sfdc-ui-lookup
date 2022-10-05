@@ -1,5 +1,6 @@
 # Salesforce Lookup Component (Aura version, maintenance only)
-⚠️This Aura version is only maintained for bugs. New features are added to the [Lightning Web Component version](https://github.com/pozil/sfdc-ui-lookup-lwc).
+**⚠️This Aura version is no longer maintained.**<br/>
+New features are only added to the [Lightning Web Component version](https://github.com/pozil/sfdc-ui-lookup-lwc).
 
 <p align="center">
     <img src="screenshots/lookup-animation.gif" alt="Lookup animation"/>
@@ -115,10 +116,7 @@ lookupSearch : function(component, event, helper) {
 
 
 ## Salesforce DX setup instructions
-Deploy the sample application with Salesforce DX by clicking on this button:
-
-[![Deploy](https://deploy-to-sfdx.com/dist/assets/images/DeployToSFDX.svg)](https://deploy-to-sfdx.com)
-
+Deploy the sample application with the Salesforce CLI.
 
 ## Sample application
 The default installation installs the lookup component and a sample application available under this URL (replace the domain):<br/>
